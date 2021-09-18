@@ -16,7 +16,7 @@ for _ in range(n):
                 print(max(stack))
             elif command == '4':
                 print(min(stack))
-                
+
 while stack:
     stack_reversed.append(stack.pop())
 print(', '.join(map(str, stack_reversed)))
