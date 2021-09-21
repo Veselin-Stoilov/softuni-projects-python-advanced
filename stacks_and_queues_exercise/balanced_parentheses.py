@@ -1,26 +1,35 @@
 from collections import deque
-input_queue = deque()
-opening_brackets = deque()
+parentheses = deque()
+opening_parentheses_collection = deque()
+
+opening_parentheses_types = ('{', '[', '(')
 matches = ('{}', '[]', '()')
-opening_options = ('{', '[', '(')
 is_balanced = True
-line = input()
+min_one_opening = False
+min_one_closing = False
 
-for i in line:
-    input_queue.append(i)
+input_line = input()
+for p in input_line:
+    parentheses.append(p)
 
-while input_queue:
-    if input_queue[0] in opening_options:
-        opening_brackets.append(input_queue.popleft())
+while parentheses:
+    if parentheses[0] in opening_parentheses_types:
+        min_one_opening = True
+        opening_parentheses_collection.append(parentheses.popleft())
     else:
-        if opening_brackets.pop() + input_queue.popleft() not in matches:
+        if not opening_parentheses_collection:
             is_balanced = False
             break
         else:
-            continue
+            min_one_closing = True
+            if opening_parentheses_collection.pop() + parentheses.popleft() not in matches:
+                is_balanced = False
+                break
 
-if not is_balanced or opening_brackets is True:
-    print('NO')
-else:
+if not (min_one_opening and min_one_closing):
+    is_balanced = False
+if is_balanced:
     print('YES')
+else:
+    print('NO')
 
