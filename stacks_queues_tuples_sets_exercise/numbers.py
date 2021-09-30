@@ -15,8 +15,8 @@ for _ in range(n):
 
     elif command[0] == 'Remove' and command[1] == 'Second':
         second_set = second_set.difference(command[2:])
-        
-    elif command == 'Check Subset':
+
+    elif command[0] == 'Check':
         if first_set.issubset(second_set) or second_set.issubset(first_set):
             print('True')
         else:
@@ -27,3 +27,5 @@ second_set = list(map(lambda x: str(x), sorted(second_set)))
 
 print(', '.join(first_set))
 print(', '.join(second_set))
+
+
