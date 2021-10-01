@@ -35,6 +35,7 @@ operands = deque()
 while len(string) > 0:
     if string[0].isdigit():
         operands.append(int(string.popleft()))
+        
     elif len(string[0]) > 1 and string[0].startswith('-'):
         operands.append(int(string.popleft()))
 
