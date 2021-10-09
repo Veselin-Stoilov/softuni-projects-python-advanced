@@ -4,7 +4,6 @@ def snake_matrix_generator(string):
     simulating a snake move
     """
     matrix = []
-
     string_index = 0
 
     for r in range(n):
