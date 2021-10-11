@@ -18,7 +18,13 @@ def framing_of_matrix(matrix):
     for r in range(len(matrix) + 4):
         row = []
         for c in range(len(matrix) + 4):
-            if r in range(0, 2) or r in range(len(matrix) + 2, len(matrix) + 4) or c in range(0, 2) or c in range(len(matrix) + 2, len(matrix) + 4):
+            if (
+                r in range(0, 2) or
+                r in range(len(matrix) + 2, len(matrix) + 4) or
+                c in range(0, 2) or
+                c in range(len(matrix) + 2, len(matrix) + 4)
+            ):
+
                 row.append(None)
             else:
                 row.append(matrix[r - 2][c - 2])
