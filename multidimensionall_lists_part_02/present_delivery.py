@@ -72,9 +72,11 @@ while True:
     if neighbourhood[santa_row][santa_col] == 'X':
         neighbourhood[santa_row][santa_col] = '-'
         continue
+
     if neighbourhood[santa_row][santa_col] == 'V':
         neighbourhood[santa_row][santa_col] = '-'
         gifts -= 1
+
     elif neighbourhood[santa_row][santa_col] == 'C':
         neighbourhood[santa_row][santa_col] = '-'
         world, gifts = cookie(santa_row, santa_col, neighbourhood, gifts)
