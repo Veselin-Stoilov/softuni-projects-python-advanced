@@ -136,11 +136,14 @@ def is_winner(r, c, board, line):
 
 
 size = 7  # size of the board
-line = 3  # humber of elements in line to win the game
+slots_to_win = 3  # humber of elements in line to win the game
 board = board_generator(size)
+column_indexes = [1, 2, 3, 4, 5, 6, 7]
+print(column_indexes)
 for r in reversed(board):
     print(r)
 players = [1, 2]
+
 
 while True:
 
@@ -148,21 +151,24 @@ while True:
         row, col, board = player_one_move(board, size)
         if row == 'Invalid':
             continue
+
+        print(column_indexes)
         for r in reversed(board):
             print(r)
             players = [2, 1]
-        if is_winner(row, col, board, line):
-            print('Player [1] wins, congratulations!')
+        if is_winner(row, col, board, slots_to_win):
+            print('Player [1] wins, CONGRATULATIONS!')
             break
     if players[0] == 2:
         row, col, board = player_two_move(board, size)
         if row == 'Invalid':
             player_two_invalid_move = True
             continue
+        print(column_indexes)
         for r in reversed(board):
             print(r)
             players = [1, 2]
-        if is_winner(row, col, board, line):
-            print('Player [2] wins, congratulations!')
+        if is_winner(row, col, board, slots_to_win):
+            print('Player [2] wins, CONGRATULATIONS!')
             break
 
