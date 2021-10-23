@@ -5,14 +5,6 @@ def world_generator(size_of_world: int):
     return field
 
 
-def find_buckets(world, size):
-    for r in range(size):
-        for c in range(size):
-            if world[r][c] == 'B':
-                bucket_r, alice_c = r, c
-                return alice_r, alice_c
-
-
 def step_outside(r, c, size):
     if r in range(0, size) and c in range(0, size):
         return False
@@ -72,31 +64,3 @@ if points < 100:
 
 else:
     print(f"Good job! You scored {points} points, and you've won {prize}.")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
