@@ -1,7 +1,7 @@
 from collections import deque
 
-materials = [int(x) for x in input().split()]  # .pop()
-magic = deque(int(x) for x in input().split())  # .popleft()
+materials = [int(x) for x in input().split()]
+magic = deque(int(x) for x in input().split())
 
 gifts = {}
 gifts_created = False
